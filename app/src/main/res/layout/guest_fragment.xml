@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.ui.GuestFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/myGreyBlue"
+        tools:context=".presentation.ui.GuestActivity">
+
+
+        <EditText
+
+            android:id="@+id/addGuestStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="56dp"
+            android:hint="Введите статус"
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="@+id/addGuestId"
+
+            app:layout_constraintStart_toStartOf="@+id/addGuestId"
+            app:layout_constraintTop_toBottomOf="@+id/showGuestData" />
+
+        <Button
+            android:id="@+id/delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="удалить гостя"
+            android:backgroundTint="@color/myGrey"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/showAllGuestButton" />
+
+        <Button
+            android:id="@+id/showAllGuestButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Список гостей"
+            android:backgroundTint="@color/myGrey"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/createGuestButton" />
+
+        <Button
+            android:id="@+id/createGuestButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Создать гостя"
+            android:backgroundTint="@color/myGrey"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/showGuestData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Показать данные гостя по id"
+            android:backgroundTint="@color/myGrey"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/createGuestButton"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/addGuestId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="Введите id гостя"
+            android:inputType="number"
+            app:layout_constraintEnd_toEndOf="@+id/showGuestData"
+            app:layout_constraintStart_toStartOf="@+id/showGuestData"
+            app:layout_constraintTop_toBottomOf="@+id/showGuestData" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/createContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/addGuestStatus">
+
+            <Button
+                android:id="@+id/showGuestsByStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="по статусу"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                app:layout_constraintHorizontal_bias="0.184"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/addDiscount" />
+
+            <EditText
+                android:id="@+id/addName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="Введите имя гостя"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/addNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="Введите номер гостя"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/addName" />
+
+            <EditText
+                android:id="@+id/addVisits"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="Введите количество визитов гостя"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/addNumber" />
+
+            <EditText
+                android:id="@+id/addMoneySpent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="Введите количество денег потраченых гостя"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/addVisits" />
+
+            <EditText
+                android:id="@+id/addStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="Введите статус гостя"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/addMoneySpent" />
+
+            <EditText
+                android:id="@+id/addDiscount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="Введите скидку гостя"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/addStatus" />
+
+            <Button
+                android:id="@+id/saveGuest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Сохранить"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/addDiscount" />
+
+            <Button
+                android:id="@+id/updateGuest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Обновить"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                app:layout_constraintStart_toEndOf="@+id/saveGuest"
+                app:layout_constraintTop_toBottomOf="@+id/addDiscount" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/guestData"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="bottom|center_horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/createContainer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/addGuestStatus" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
