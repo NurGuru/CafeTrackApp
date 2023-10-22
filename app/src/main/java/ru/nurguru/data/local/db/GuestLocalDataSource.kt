@@ -1,12 +1,11 @@
 package ru.nurguru.data.local.db
 
 import android.content.ContentValues
-import android.provider.BaseColumns
 import ru.nurguru.data.model.GuestEntity
 import ru.nurguru.data.safeCallReadable
 import ru.nurguru.data.safeCallWritable
 
-class GuestLocalDataSource(private val database: GuestsDatabase) {
+class GuestLocalDataSource(private val database: Database) {
 
 //добавить гостя СДЕЛАЛ
     fun addGuest(guest: GuestEntity) {

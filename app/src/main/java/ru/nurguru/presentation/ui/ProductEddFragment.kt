@@ -8,21 +8,25 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.net.toUri
 import org.koin.android.ext.android.inject
-import ru.nurguru.R
 import ru.nurguru.databinding.ProductEddFragmentBinding
+import ru.nurguru.domain.CategoryUseCase
 import ru.nurguru.domain.MenuUseCase
 import ru.nurguru.domain.model.Product
 import java.lang.ref.WeakReference
+
+
 
 
 class ProductEddFragment : Fragment() {
 
     private lateinit var binding: ProductEddFragmentBinding
     private val menuUseCase: MenuUseCase by inject()
+    private val categoryUseCase: CategoryUseCase by inject()
     private lateinit var imagePickerLauncher: ActivityResultLauncher<Intent>
     private var imageUri: Uri? = null
     private var selectedId = 0
@@ -37,7 +41,22 @@ class ProductEddFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         getBundle()
+
+        //с 49 по 59 строчки - это для spiner чтоб при создании товара в момент выбора категории
+        //отображался список уже  имеющихся категории
+        val suggestions = ArrayList<String>()
+        val list = categoryUseCase.getCategories()
+        for (i in list) {
+            suggestions.add(i.categoryName)
+        }
+
+        binding.productCategory.adapter = ArrayAdapter(
+            requireContext(),
+            android.R.layout.simple_spinner_dropdown_item,
+            suggestions
+        )
 
         imagePickerLauncher =
             registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
@@ -69,7 +88,7 @@ class ProductEddFragment : Fragment() {
                         menuUseCase.getProducts().size + 1,
                         imageUri.toString(),
                         productName.text.toString(),
-                        productCategory.text.toString(),
+                        productCategory.selectedItem.toString(),
                         productPrice.text.toString().toInt(),
                         productPrimeCost.text.toString().toInt()
                     )
@@ -92,7 +111,7 @@ class ProductEddFragment : Fragment() {
                         productId = it1,
                         uri.toString(),
                         productName.text.toString(),
-                        productCategory.text.toString(),
+                        productCategory.selectedItem.toString(),
                         productPrice.text.toString().toInt(),
                         productPrimeCost.text.toString().toInt()
                     )
@@ -133,7 +152,8 @@ class ProductEddFragment : Fragment() {
             with(binding) {
                 ivAddProductImage.setImageURI((args.getString("uri"))?.toUri())
                 productName.setText(args.getString("name"))
-                productCategory.setText(args.getString("category"))
+                //                productCategory.selectedItem.(args.getString("category")) не знаю как при
+//                открывании карточки уже созданного товара, отображать в спинере уже выбранный параметр
                 productPrice.setText(args.getString("price"))
                 productPrimeCost.setText(args.getString("primeCost"))
                 tvProductCreation.text = "Редактирование товара"

@@ -48,3 +48,17 @@ object MenuTable : DatabaseTable(tableName = "menu") {
             "${Columns.PRICE} INTEGER," +
             "${Columns.PRIME_COST} INTEGER);"
 }
+
+object CategoryTable : DatabaseTable(tableName = "category") {
+
+    object Columns {
+        const val CATEGORY_ID = "_id"
+        const val CATEGORY_IMG = "categoryImage"
+        const val CATEGORY_NAME = "categoryName"
+    }
+
+    override fun createTableQuery(): String = " CREATE TABLE $tableName (" +
+            "${Columns.CATEGORY_ID} INTEGER PRIMARY KEY AUTOINCREMENT," +
+            "${Columns.CATEGORY_IMG} TEXT," +
+            "${Columns.CATEGORY_NAME} TEXT);"
+}

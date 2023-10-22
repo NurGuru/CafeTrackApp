@@ -5,7 +5,7 @@ import ru.nurguru.domain.model.Product
 import ru.nurguru.data.safeCallReadable
 import ru.nurguru.data.safeCallWritable
 
-class MenuLocalDataSource(private val database: GuestsDatabase) {
+class MenuLocalDataSource(private val database: Database) {
 
     fun addProduct(product: Product) {
         database.safeCallWritable {

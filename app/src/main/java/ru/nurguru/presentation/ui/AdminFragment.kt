@@ -30,6 +30,12 @@ class AdminFragment : Fragment() {
             Navigator.toMenuScreen(WeakReference(childFragmentManager),
             MenuFragment.newInstance())
         }
+
+        binding.btnWorkWithCategory.setOnClickListener {
+            Navigator.toCategoryScreen(WeakReference(childFragmentManager),
+                CategoryFragment.newInstance())
+        }
+
         return binding.root
 
     }

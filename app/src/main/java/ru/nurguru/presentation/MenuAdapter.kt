@@ -9,6 +9,7 @@ import ru.nurguru.R
 import ru.nurguru.databinding.ProductItemBinding
 import ru.nurguru.domain.model.Product
 
+
 class MenuAdapter(
     private val products: MutableList<Product>,
     private val listener: (Product) -> Unit
