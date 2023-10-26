@@ -21,14 +21,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:text="Работа с гостями" />
+            android:text="Гости" />
 
         <Button
             android:id="@+id/btnWorkWithMenu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:text="Работа с меню" />
+            android:text="Меню" />
+
+        <Button
+            android:id="@+id/btnWorkWithCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="Категории товаров" />
     </LinearLayout>
 
 </FrameLayout>

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/productPlaceHolder"
+    android:id="@+id/categoryPlaceHolder"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.ui.ProductEddFragment">
+    tools:context=".presentation.ui.CategoryAddFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -12,10 +12,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/myGreyBlue"
-        tools:context=".presentation.ui.ProductEddActivity">
+        tools:context=".presentation.ui.CategoryAddActivity">
 
         <LinearLayout
-            android:id="@+id/linearLayout"
+            android:id="@+id/categoryLinearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/white"
@@ -25,7 +25,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <Button
-                android:id="@+id/btnCanselCreation"
+                android:id="@+id/btnCanselCategoryCreation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -35,17 +35,17 @@
                 tools:ignore="HardcodedText" />
 
             <TextView
-                android:id="@+id/tvProductCreation"
+                android:id="@+id/tvCategoryCreation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Создание товара"
+                android:text="Создание категории"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 tools:ignore="HardcodedText" />
 
             <Button
-                android:id="@+id/btn_changeProduct"
+                android:id="@+id/btn_changeCategory"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
@@ -56,7 +56,7 @@
                 tools:ignore="HardcodedText" />
 
             <Button
-                android:id="@+id/btn_deleteProduct"
+                android:id="@+id/btn_deleteCategory"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
@@ -67,7 +67,7 @@
                 tools:ignore="HardcodedText" />
 
             <Button
-                android:id="@+id/btn_creationReady"
+                android:id="@+id/btn_categoryCreationReady"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
@@ -79,7 +79,7 @@
         </LinearLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/containerForImage"
+            android:id="@+id/containerForCategoryImage"
             android:layout_width="match_parent"
             android:layout_height="160dp"
             android:layout_marginTop="36dp"
@@ -87,10 +87,10 @@
             android:paddingVertical="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+            app:layout_constraintTop_toBottomOf="@+id/categoryLinearLayout">
 
             <ImageView
-                android:id="@+id/ivAddProductImage"
+                android:id="@+id/ivAddCategoryImage"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:background="@color/white"
@@ -100,16 +100,16 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <Button
-                android:id="@+id/btn_addProductImg"
+                android:id="@+id/btn_addCategoryImg"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@android:color/transparent"
                 android:text="Выбрать\nизображение"
                 android:textColor="@color/myBrown"
-                app:layout_constraintBottom_toBottomOf="@+id/ivAddProductImage"
-                app:layout_constraintEnd_toEndOf="@+id/ivAddProductImage"
-                app:layout_constraintStart_toStartOf="@+id/ivAddProductImage"
-                app:layout_constraintTop_toTopOf="@+id/ivAddProductImage" />
+                app:layout_constraintBottom_toBottomOf="@+id/ivAddCategoryImage"
+                app:layout_constraintEnd_toEndOf="@+id/ivAddCategoryImage"
+                app:layout_constraintStart_toStartOf="@+id/ivAddCategoryImage"
+                app:layout_constraintTop_toTopOf="@+id/ivAddCategoryImage" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -121,39 +121,14 @@
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/containerForImage">
-
-            <EditText
-                android:id="@+id/productName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="4dp"
-                android:hint="Название товара"
-                android:inputType="text" />
-
-            <EditText
-                android:id="@+id/productPrimeCost"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="4dp"
-                android:hint="Себестоимость"
-                android:inputType="number" />
-
-            <EditText
-                android:id="@+id/productPrice"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="4dp"
-                android:hint="Цена"
-                android:inputType="number" />
-
-            <Spinner
-                android:id="@+id/productCategory"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="4dp"
-                android:hint="Категория"
-                android:inputType="text" />
+            app:layout_constraintTop_toBottomOf="@+id/containerForCategoryImage">
+        <EditText
+            android:id="@+id/categoryName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="4dp"
+            android:hint="Название категории"
+            android:inputType="text" />
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

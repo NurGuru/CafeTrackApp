@@ -16,6 +16,15 @@ object Navigator {
         screenId = R.id.mainPlaceHolder,
     )
 
+    fun toCategoryScreen(
+        manager: WeakReference<FragmentManager>,
+        categoryFragment: CategoryFragment
+    ) = goToScreen(
+        manager = manager,
+        fragment = categoryFragment,
+        screenId = R.id.adminPlaceHolder,
+    )
+
     fun toGuestsScreen(
         manager: WeakReference<FragmentManager>,
         guestFragment: GuestFragment
@@ -50,6 +59,24 @@ object Navigator {
         manager = manager,
         fragment = productEddFragment,
         screenId = R.id.menuPlaceHolder,
+    )
+
+    fun toCategoryAddScreen(
+        manager: WeakReference<FragmentManager>,
+        categoryAddFragment: CategoryAddFragment
+    ) = goToScreen(
+        manager = manager,
+        fragment = categoryAddFragment,
+        screenId = R.id.categoryPlaceHolder,
+    )
+
+    fun backToCategoryScreen(
+        manager: WeakReference<FragmentManager>,
+        categoryFragment: CategoryFragment
+    ) = goToScreen(
+        manager = manager,
+        fragment = categoryFragment,
+        screenId = R.id.categoryPlaceHolder,
     )
 
     private fun goToScreen(
